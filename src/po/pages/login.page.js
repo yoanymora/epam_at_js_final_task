@@ -18,11 +18,11 @@ class LoginPage extends BasePage {
     }
 
     get errorMessageContainer() {
-        return $('.error-message-container');
+        return $('.error-message-container h3');
     }
 
     get headerLabel() {
-        return $('#header_container').$('.header_label').$('.app_logo');
+        return $('#header_container .header_label .app_logo');
     }
 
     async clickLogInButton() {
@@ -42,7 +42,7 @@ class LoginPage extends BasePage {
     }
 
     async getErrorMessage() {
-        return await this.errorMessageContainer.$('h3').getText();
+        return await this.errorMessageContainer.getText();
     }
 
 }
