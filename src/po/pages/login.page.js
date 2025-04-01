@@ -29,13 +29,13 @@ class LoginPage extends BasePage {
         await this.logInButton.click();
     }
 
-    async clearUsernameInput(input) {
+    async clearUsernameInput() {
         await this.usernameInput.click();
         await browser.keys(['Control', 'a']);
         await browser.keys('Delete');
     }
 
-    async clearPasswordInput(input) {
+    async clearPasswordInput() {
         await this.passwordInput.click();
         await browser.keys(['Control', 'a']);
         await browser.keys('Delete');
