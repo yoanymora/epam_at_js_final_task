@@ -14,7 +14,7 @@ describe("sauce demo page test suite", () => {
         await LoginPage.usernameInput.addValue(userEmail);
         await LoginPage.passwordInput.addValue(userPassword);
         await LoginPage.clearUsernameInput();
-        await LoginPage.logInButton.click();
+        await LoginPage.clickLogInButton();
         await expect(await LoginPage.getErrorMessage()).toContain("Username is required");
     });
 
@@ -22,14 +22,14 @@ describe("sauce demo page test suite", () => {
         await LoginPage.usernameInput.addValue(userEmail);
         await LoginPage.passwordInput.addValue(userPassword);
         await LoginPage.clearPasswordInput();
-        await LoginPage.logInButton.click();
+        await LoginPage.clickLogInButton();
         await expect(await LoginPage.getErrorMessage()).toContain("Password is required");
     });
 
     it("UC-3 Test Login form with credentials by passing Username & Password", async () => {
         await LoginPage.usernameInput.addValue(userEmail);
         await LoginPage.passwordInput.addValue(userPassword);
-        await LoginPage.logInButton.click();
+        await LoginPage.clickLogInButton();
         await expect(await LoginPage.headerLabel).toHaveText("Swag Labs");
     });
 });
