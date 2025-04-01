@@ -1,2 +1,1 @@
-export const userEmail = "standard_user";
-export const userPassword = "secret_sauce";
+exports.userData = { userEmail: 'standard_user', userPassword: 'secret_sauce' };
