@@ -11,24 +11,24 @@ describe("sauce demo page test suite", () => {
     });
 
     it("UC-1 Test Login form with empty credentials", async () => {
-        await LoginPage.usernameInput.addValue(userEmail);
-        await LoginPage.passwordInput.addValue(userPassword);
+        await LoginPage.addInputValue("username", userEmail);
+        await LoginPage.addInputValue("password", userPassword);
         await LoginPage.clearUsernameInput();
         await LoginPage.clickLogInButton();
         await expect(await LoginPage.getErrorMessage()).toContain("Username is required");
     });
 
     it("UC-2 Test Login form with credentials by passing Username", async () => {
-        await LoginPage.usernameInput.addValue(userEmail);
-        await LoginPage.passwordInput.addValue(userPassword);
+        await LoginPage.addInputValue("username", userEmail);
+        await LoginPage.addInputValue("password", userPassword);
         await LoginPage.clearPasswordInput();
         await LoginPage.clickLogInButton();
         await expect(await LoginPage.getErrorMessage()).toContain("Password is required");
     });
 
     it("UC-3 Test Login form with credentials by passing Username & Password", async () => {
-        await LoginPage.usernameInput.addValue(userEmail);
-        await LoginPage.passwordInput.addValue(userPassword);
+        await LoginPage.addInputValue("username", userEmail);
+        await LoginPage.addInputValue("password", userPassword);
         await LoginPage.clickLogInButton();
         await expect(await LoginPage.headerLabel).toHaveText("Swag Labs");
     });

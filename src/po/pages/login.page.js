@@ -45,6 +45,14 @@ class LoginPage extends BasePage {
         return await this.errorMessageContainer.getText();
     }
 
+    async addInputValue(input, value) {
+        if (input === 'username') {
+            return await this.usernameInput.addValue(value);
+        } else {
+            return await this.passwordInput.addValue(value);
+        }
+    }
+
 }
 
 export default new LoginPage();
