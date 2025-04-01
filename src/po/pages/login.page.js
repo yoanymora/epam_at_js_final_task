@@ -5,25 +5,15 @@ class LoginPage extends BasePage {
         super('https://www.saucedemo.com');
     }
 
-    get usernameInput() {
-        return $('#user-name');
-    }
+    get usernameInput() { return $('#user-name') }
 
-    get passwordInput() {
-        return $('#password');
-    }
+    get passwordInput() { return $('#password') }
 
-    get logInButton() {
-        return $('#login-button');
-    }
+    get logInButton() { return $('#login-button') }
 
-    get errorMessageContainer() {
-        return $('.error-message-container h3');
-    }
+    get errorMessageContainer() { return $('.error-message-container h3') }
 
-    get headerLabel() {
-        return $('#header_container .header_label .app_logo');
-    }
+    get headerLabel() { return $('#header_container .header_label .app_logo') }
 
     async clickLogInButton() {
         await this.logInButton.click();
